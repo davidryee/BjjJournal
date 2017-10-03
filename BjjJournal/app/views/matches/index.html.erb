@@ -1,0 +1,15 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Title &nbsp; &nbsp; &nbsp;</th>
+    <th>Commentary</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @matches.each do |match| %>
+  `<tr>
+    <td><%= match.title%></td>
+    <td><%= match.text%></td>
+    <td><button type="submit" class="btn btn-danger">Delete</button></td>
+  `</tr>
+  <% end %>
+</table>
