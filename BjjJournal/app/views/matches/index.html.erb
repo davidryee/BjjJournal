@@ -9,7 +9,9 @@
   `<tr>
     <td><%= match.title%></td>
     <td><%= match.text%></td>
-    <td><%= link_to "Delete", match, method: :delete, :class => "btn btn-danger" %></td>
+    <td><%= button_to "Delete", match, method: :delete, :class => "btn btn-danger" %></td>
   `</tr>
   <% end %>
 </table>
+
+<%= button_to "Create a new match", new_match_path, :method => "get", :class => "btn btn-primary" %>
