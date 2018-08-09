@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814014424) do
+ActiveRecord::Schema.define(version: 20180809025750) do
+
+  create_table "competitors", force: :cascade do |t|
+    t.string "name"
+    t.string "height"
+    t.string "weight"
+  end
 
   create_table "matches", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "competitor_id"
+    t.index ["competitor_id"], name: "index_matches_on_competitor_id"
   end
 
 end
