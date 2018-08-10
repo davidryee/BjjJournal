@@ -17,17 +17,18 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new()
-    permitted_params = match_params
-    @match.title=permitted_params[:title]
-    @match.text=permitted_params[:text]
-    competitor = Competitor.create(name: permitted_params[:name],
-                                   height: permitted_params[:height],
-                                   weight: permitted_params[:weight])
 
+    @match.title=match_params[:title]
+    @match.text=match_params[:text]
+    accepted_competitor_params = competitor_params
+    height_as_int = accepted_competitor_params[:height].to_i
+    puts "height as int class is: #{height_as_int.class}"
+    weight_as_int = accepted_competitor_params[:weight].to_i
+    competitor = Competitor.create(name: accepted_competitor_params[:name],
+                                   height: height_as_int,
+                                   weight: weight_as_int)
 
     @match.competitor = competitor
-    puts "before save"
-    #@match.competitor_id = Competitor.create!(:name=>permitted_params[:name], :height=>permitted_params[:height], :weight=>permitted_params[:weight]).id
     @match.save!
     redirect_to @match
   end
@@ -42,6 +43,10 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    params.require(:match).permit(:title, :text, :name, :height, :weight)
+    params.require(:match).permit(:title, :text)
+  end
+
+  def competitor_params
+    params.require(:match).permit(:name, :height, :weight)
   end
 end

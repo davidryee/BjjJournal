@@ -12,7 +12,7 @@ class CompetitorsController < ApplicationController
 
   #get by id: matches/id
   def show
-
+    @competitor = Competitor.find(params[:id])
   end
 
   def create

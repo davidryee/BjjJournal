@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809025750) do
+ActiveRecord::Schema.define(version: 20180810225124) do
 
   create_table "competitors", force: :cascade do |t|
     t.string "name"
-    t.string "height"
-    t.string "weight"
+    t.integer "height"
+    t.integer "weight"
   end
 
   create_table "matches", force: :cascade do |t|
