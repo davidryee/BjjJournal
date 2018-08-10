@@ -2,6 +2,7 @@
   <tr>
     <th>Title &nbsp; &nbsp; &nbsp;</th>
     <th>Commentary</th>
+    <th>Competitor</th>
     <th>Actions</th>
   </tr>
 
@@ -9,6 +10,7 @@
   `<tr>
     <td><%= match.title%></td>
     <td><%= match.text%></td>
+    <td><%= match.competitor.name%></td>
     <td><%= button_to "Delete", match, method: :delete, :class => "btn btn-danger" %></td>
   `</tr>
   <% end %>

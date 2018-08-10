@@ -1,8 +1,9 @@
 class Competitor < ApplicationRecord
-  attr_accessor :name, :height, :weight
+  #attr_accessor :name, :height, :weight
 
-  validates :name, :height, :weight, presence: true
-  before_validation :check_height, :check_weight
+  #validates :name, :height, :weight, presence: true
+  #before_validation :check_height, :check_weight
+
   before_save do
     self.name = "Roger Gracie" if name.blank?
   end
