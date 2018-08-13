@@ -1,11 +1,17 @@
-<p>
-  <strong>Title:</strong>
-  <%= @match.title %>
-</p>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Commentary</th>
+    <th>Number of competitors with this name</th>
+  </tr>
 
-<p>
-  <strong>Text:</strong>
-  <%= @match.text %>
-</p>
+  `<tr>
+  <td><%= @match.title%></td>
+  <td><%= @match.text%></td>
+  <td><%= @match.number_of_competitor_occurrences%></td>
+  <td><%= %></td>
+  `</tr>
+</table>
+
 
 <%= button_to "View all matches", matches_path, :method => "get", :class => "btn btn-primary"%>

@@ -13,6 +13,10 @@ class MatchesController < ApplicationController
   #get by id: matches/id
   def show
     @match = Match.find(params[:id])
+    competitor = @match.competitor
+    query_params = @match.get_query_params(competitor.name)
+    @match.number_of_competitor_occurrences = Match.where(query_params[:empty_query],
+                                                           query_params[:query_param]).count
   end
 
   def create
