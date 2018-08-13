@@ -1,0 +1,17 @@
+<h1>Create a New Belt</h1>
+
+<%= form_for :belt, url: belts_path do |belt| %>
+  <p>
+    <%= belt.label :color%>
+    <%= belt.text_field :color%>
+  </p>
+
+  <p>
+    <%= belt.label :rank %>
+    <%= belt.text_field :rank%>
+  </p>
+
+  <p>
+    <%= belt.submit %>
+  </p>
+<%end%>

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :matches
   resources :competitors
+  resources :belts
   root 'welcome#index'
 end

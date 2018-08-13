@@ -1,0 +1,13 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Belt Rank</th>
+    <th>Belt Color</th>
+  </tr>
+
+  <%= @belts.each do |belt| %>
+    <tr>
+      <td><%= belt.rank %></td>
+      <td><%= belt.color %></td>
+    </tr>
+  <% end %>
+</table>

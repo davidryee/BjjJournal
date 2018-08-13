@@ -1,0 +1,13 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Belt Color</th>
+    <th>Belt Rank</th>
+  </tr>
+
+  <tr>
+    <td><%= @belt.color%></td>
+    <td><%= @belt.rank%></td>
+  </tr>
+</table>
+
+<%= button_to 'Show all belts', belts_path, :method => "get", class: "btn btn-primary"%>
